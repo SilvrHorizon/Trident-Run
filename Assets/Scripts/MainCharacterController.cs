@@ -30,10 +30,10 @@ public class MainCharacterController : MonoBehaviour
     }
 
     //The velocity that the player gets when jumping
-    float jumpHeight = 15f;
+    [SerializeField] float jumpHeight = 15f;
 
     //The horizontal velocity it gets when A or D is pressed 
-    float horizontalSpeed = 6.5f;
+    [SerializeField] float horizontalSpeed = 6.5f;
 
     //The vector that the player volontarily moves the character
     void ControlledMovement()
