@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
 
         foreach (GameObject interactable in interactableObjects)
         {
+            
             if (boxCollider2d.IsTouching(interactable.GetComponent<BoxCollider2D>()))
             {
                 interactable.GetComponent<Interactable>().Interact();

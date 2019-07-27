@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class DoorHandeler : MonoBehaviour
 {
+
+    
     public enum DoorStates
     {
         Locked,
         Closed,
         Open
     }
+
+    public Action onEnter;
 
     [SerializeField] DoorStates doorState;
 
@@ -19,10 +24,29 @@ public class DoorHandeler : MonoBehaviour
         lockSwitches = gameObject.GetComponentsInChildren<ConnectedToDoor>();
         foreach(ConnectedToDoor a in lockSwitches)
         {
-            Debug.Log(a.gameObject);
+            Debug.Log("The door named: " + gameObject + " has a button called " + a.gameObject + " connected");
         }
 
+        gameObject.GetComponent<Interactable>().onTrigger = () =>
+        {
+            gameObject.GetComponent<DoorHandeler>().Interacted();
+        };
+
         CheckLockState();
+    }
+
+    void Interacted()
+    {
+        if(doorState == DoorStates.Closed)
+        {
+            SetDoorState(DoorStates.Open);
+        } else if (doorState == DoorStates.Open)
+        {
+            onEnter();
+        } else
+        {
+            Debug.Log("Player tried to open closed door");
+        }
     }
 
     public void CheckLockState()
@@ -42,19 +66,20 @@ public class DoorHandeler : MonoBehaviour
         {
             SetDoorState(DoorStates.Closed);
         }
-        Debug.Log(doorState);
     }
 
     void SetDoorState(DoorStates newState)
     {
         doorState = newState;
+
         if(doorState == DoorStates.Locked)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         } else if (doorState == DoorStates.Closed)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
-        }else if (doorState == DoorStates.Open)
+        }
+        else if (doorState == DoorStates.Open)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
