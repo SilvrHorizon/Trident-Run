@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3232748944240633207}
   - component: {fileID: 3232748944240632970}
   - component: {fileID: 3232748944240632969}
-  - component: {fileID: 3708058720722704336}
+  - component: {fileID: 1348372870602117888}
   m_Layer: 8
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -127,9 +127,9 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &3708058720722704336
+--- !u!114 &1348372870602117888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3232748944240633206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d85782c4224b66049b225b9a91486c65, type: 3}
+  m_Script: {fileID: 11500000, guid: 21e3141c0ef920d49bd49e0e1c5d34a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   platformsLayerMask:
