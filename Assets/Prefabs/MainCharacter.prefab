@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3232748944240633207}
   - component: {fileID: 3232748944240632970}
   - component: {fileID: 3232748944240632969}
-  - component: {fileID: 3232748944240632971}
-  m_Layer: 0
-  m_Name: Lars
+  - component: {fileID: 3708058720722704336}
+  m_Layer: 8
+  m_Name: MainCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3232748944240632971
+--- !u!114 &3708058720722704336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,9 +138,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3232748944240633206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a56441a2cec414aa0f3fda88b3d7ef, type: 3}
+  m_Script: {fileID: 11500000, guid: d85782c4224b66049b225b9a91486c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpableLayerMask:
+  platformsLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 55
