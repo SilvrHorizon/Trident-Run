@@ -7,7 +7,9 @@ public static class SceneLoader
 {
     public enum Scenes
     {
-        SampleScene
+        SampleScene,
+        TestScene,
+        RespawnScreen
     }
 
     public static void Load(Scenes toLoad)

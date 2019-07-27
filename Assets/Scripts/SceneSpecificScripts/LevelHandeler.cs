@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestLevelScript : MonoBehaviour
+public class LevelHandeler : MonoBehaviour
 {
     [SerializeField] GameObject exitDoor;
     [SerializeField] SceneLoader.Scenes nextLevel;
@@ -13,5 +13,6 @@ public class TestLevelScript : MonoBehaviour
         {
             SceneLoader.Load(nextLevel);
         };
+        Destroy(gameObject);
     }
 }

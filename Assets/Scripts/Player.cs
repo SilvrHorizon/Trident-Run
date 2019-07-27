@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (IsGrounded() && Input.GetKey(KeyCode.Space))
+        if (IsGrounded() && Mathf.Approximately(Input.GetAxisRaw("Vertical"), 1.0f))
         {
             float jumpVelocity = 20f;
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
 
         foreach (GameObject interactable in interactableObjects)
         {
-            
+
             if (boxCollider2d.IsTouching(interactable.GetComponent<BoxCollider2D>()))
             {
                 interactable.GetComponent<Interactable>().Interact();
@@ -74,15 +74,21 @@ public class Player : MonoBehaviour
     private void HandleMovement_FullMidAirControl()
     {
         float moveSpeed = 10f;
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Mathf.Approximately(Input.GetAxisRaw("Horizontal"), -1.0f))
         {
-            rigidbody2d.velocity = new Vector2(-moveSpeed, rigidbody2d.velocity.y);
+            if (Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.left, 0.1f, platformsLayerMask).collider == null)
+            {
+                rigidbody2d.velocity = new Vector2(-moveSpeed, rigidbody2d.velocity.y);
+            }
         }
         else
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 1.0f))
             {
-                rigidbody2d.velocity = new Vector2(+moveSpeed, rigidbody2d.velocity.y);
+                if ((Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.right, 0.1f, platformsLayerMask).collider == null))
+                {
+                    rigidbody2d.velocity = new Vector2(+moveSpeed, rigidbody2d.velocity.y);
+                }
             }
             else
             {

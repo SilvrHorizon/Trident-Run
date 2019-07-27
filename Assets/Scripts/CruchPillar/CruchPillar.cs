@@ -80,7 +80,6 @@ public class CruchPillar : MonoBehaviour
                 timer = waitTimeTop;
             }
             modeChanged = false;
-            Debug.Log(timer);
         }
 
         GetComponent<Transform>().position += new Vector3(0, velocity.y, 0) * Time.deltaTime;
@@ -90,7 +89,6 @@ public class CruchPillar : MonoBehaviour
         {
             TestMode();
         }
-        Debug.Log(timer + "\t" + currentState);
 
     }
 
