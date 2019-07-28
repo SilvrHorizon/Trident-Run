@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitDoor: {fileID: 1326998086}
-  nextLevel: 1
+  nextLevel: 3
 --- !u!4 &1190784462
 Transform:
   m_ObjectHideFlags: 0

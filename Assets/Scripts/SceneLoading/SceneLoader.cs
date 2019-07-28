@@ -9,7 +9,9 @@ public static class SceneLoader
     {
         SampleScene,
         TestScene,
-        RespawnScreen
+        RespawnScreen,
+        Test2,
+        MainMenu
     }
 
     public static void Load(Scenes toLoad)

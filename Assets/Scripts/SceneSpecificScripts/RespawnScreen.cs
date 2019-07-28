@@ -9,4 +9,9 @@ public class RespawnScreen : MonoBehaviour
     {
         SceneLoader.Load(SceneLoader.Scenes.SampleScene);
     }
+
+    public void Quit()
+    {
+        SceneLoader.Load(SceneLoader.Scenes.MainMenu);
+    }
 }
