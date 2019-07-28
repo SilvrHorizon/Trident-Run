@@ -7,7 +7,7 @@ public class RespawnScreen : MonoBehaviour
 
     public void Respawn()
     {
-        SceneLoader.Load(SceneLoader.Scenes.SampleScene);
+        SceneLoader.LoadLastScene();
     }
 
     public void Quit()
