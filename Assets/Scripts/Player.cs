@@ -41,11 +41,15 @@ public class Player : MonoBehaviour
 
 
         //Check if the player presses the "Interact key"
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Mathf.Approximately(Input.GetAxisRaw("Fire1"), 1) && !lastInteractState)
         {
             Interact();
         }
+        lastInteractState = Mathf.Approximately(Input.GetAxisRaw("Fire1"), 1);
+
     }
+
+    bool lastInteractState = false;
 
 
     void Interact()
